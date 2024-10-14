@@ -3,6 +3,7 @@ package KittyVistas;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
 
         menuLista();
@@ -10,11 +11,13 @@ public class Main {
 
 
     public static void menuLista() {
+
+        int opcion = 0;
+
         Lista lista = new Lista();
         Scanner scanner = new Scanner(System.in);
 
-        lista.crearLista();
-
+        do{
         System.out.println("1. Agregar un elemento a la lista" +
                 "\n2. Ver tamaño de la lista" +
                 "\n3. Verificar si la lista esta vacia" +
@@ -22,39 +25,41 @@ public class Main {
                 "\n5. Eliminar elemento de la lista" +
                 "\nSeleccione una opcion");
 
-        int opcion = scanner.nextInt();
-            switch (opcion) {
-                case 1:
-                    lista.crearLista();
-                    break;
-                case 2:
-                    lista.tamanioLista();
-                    break;
-                case 3:
-                    lista.estaVacia();
-                    break;
-                case 4:
-                    lista.buscarElemento();
-                    break;
 
-                case 5:
-                    lista.eliminar();
-                    break;
+           opcion = scanner.nextInt();
+           switch (opcion) {
+               case 1:
+                   lista.crearLista();
+                   break;
+               case 2:
+                   lista.tamanioLista();
+                   break;
+               case 3:
+                   lista.estaVacia();
+                   break;
+               case 4:
+                   lista.buscarElemento();
+                   break;
 
-                case 6:
-                        System.out.println("Comparar listas");
-                        lista.compararListas();
-                        break;
-                case 7:
-                    System.out.println("Finalizar programa");
-                    break;
+               case 5:
+                   lista.eliminar();
+                   break;
+
+               case 6:
+                   System.out.println("Comparar listas");
+                   lista.compararListas();
+                   break;
+               case 7:
+                   System.out.println("Finalizar programa");
+                   break;
 
 
-                default:
-                    System.out.println("Ingrese una opcion valida");
+               default:
+                   System.out.println("Ingrese una opcion valida");
+                   break;
 
-            }
-
+           }
+       }while (opcion != 6);
 
 
 
