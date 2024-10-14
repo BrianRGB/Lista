@@ -1,0 +1,80 @@
+package KittyVistas;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Lista {
+    Scanner scanner = new Scanner(System.in);
+    protected List<String> lista01 = new ArrayList<>();
+
+    public void crearLista() {
+        lista01.add("Computadora");
+        lista01.add("Mouse");
+
+    }
+
+    public void tamanioLista(){
+        System.out.println("El tamaño de la lista es de: "+ lista01.size() + " elementos");
+    }
+
+    public void estaVacia(){
+        if (lista01.isEmpty()) {
+            System.out.println("La lista esta vacia");
+        }else {
+            System.out.println("La lista no esta vacia");
+        }
+    }
+
+    public void buscarElemento(){
+        System.out.println("Ingrese el elemento que desea buscar en la lista: ");
+        String elemento = scanner.next();
+
+        if (lista01.contains(elemento)) {
+            System.out.println("El elemento "+elemento+" si se encuentra en la lista :)");
+        }else {
+            System.out.println("El elemento "+elemento+" no es encontrado :(");
+        }
+    }
+
+    public void eliminar(){
+        System.out.println("¿Que desea eliminar?\n"+
+                "1. Un elemento de la lista\n"+
+                "2. Toda la lista\n");
+        int opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1:
+                System.out.println("Ingrese el indice que desea eliminar: ");
+                String elemento = scanner.next();
+
+                if (lista01.remove(elemento)) {
+                    System.out.println("El elemento "+elemento+" se elimina en la lista");
+                }else {
+                    System.out.println("El elemento "+elemento+" no es encontrado :(");
+                }
+                break;
+
+                case 2:
+                    lista01.clear();
+                    break;
+        }
+
+    }
+
+
+    public void compararListas(){
+        List<String> lista2 = new ArrayList<>();
+        List<String> lista3 = new ArrayList<>();
+
+        lista2.add("Peter");
+        lista3.add("Peter");
+
+        if(lista2.equals(lista3)) {
+            System.out.println("Las lista son iguales");
+        }else {
+            System.out.println("Las listas no son iguales");
+        }
+
+    }
+
+}
