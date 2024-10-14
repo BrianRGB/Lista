@@ -8,13 +8,15 @@ public class Lista {
     protected List<String> lista01 = new ArrayList<>();
 
     public void crearLista() {
-        lista01.add("Computadora");
-        lista01.add("Mouse");
+        System.out.println("Ingrese un elemento a la lista: ");
+        String ele= scanner.next();
+        lista01.add(ele);
+        System.out.println("Elemento " + ele + " Agregado con exito");
 
     }
 
     public void tamanioLista(){
-        System.out.println("El tamaño de la lista es de: "+ lista01.size() + " elementos");
+        System.out.println("El tamaño de la lista es de: "+ lista01.size() + " elementos" + lista01);
     }
 
     public void estaVacia(){
